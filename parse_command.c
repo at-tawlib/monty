@@ -16,6 +16,7 @@ void parse_command(stack_t **stack, char *op, unsigned int line_num)
 		{"pall", f_pall},
 		{"pint", f_pint},
 		{"pop", f_pop},
+		{"swap", f_swap},
 		{NULL, NULL}
 	};
 	for (i = 0; ops[i].opcode; i++)
