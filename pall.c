@@ -11,6 +11,8 @@ void f_pall(stack_t **stack, unsigned int line_number)
 {
 	stack_t *temp;
 
+	if (stack == NULL || *stack == NULL)
+		return;
 	temp = *stack;
 	(void) line_number;
 
