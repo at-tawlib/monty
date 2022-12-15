@@ -21,7 +21,8 @@ void f_swap(stack_t **stack, unsigned int line_number)
 	temp = first;
 	first->next = second->next;
 	first->prev = second;
-	second->next->prev = first;
+	if (second->next != NULL)
+		second->next->prev = first;
 	second->next = temp;
 	second->prev = NULL;
 	*stack = second;
