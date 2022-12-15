@@ -10,13 +10,20 @@
 void f_swap(stack_t **stack, unsigned int line_number)
 {
 	stack_t *temp;
-	int temp_n;
+	int len = 0, temp_n;
 
-	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
+	temp = *stack;
+	while (temp)
+	{
+		temp = temp->next;
+		len++;
+	}
+	if (len < 2)
 	{
 		fprintf(stderr, "L%u: can't pop an empty stack\n", line_number);
 		exit(EXIT_FAILURE);
 	}
+
 	temp = *stack;
 	temp_n = temp->n;
 	temp->n = temp->next->n;
