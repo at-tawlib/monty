@@ -9,19 +9,20 @@
  */
 void f_rotr(stack_t **stack, unsigned int line_number)
 {
-	stack_t *temp, *node;
+	stack_t *temp;
 	(void) line_number;
 
 	if (!stack || !(*stack) || !(*stack)->next)
 		return;
 
-	node = *stack;
-	while (node)
-	{
-		temp = node;
-		node->next = temp->prev;
-		node->prev = temp->next;
-		node = temp->next;
-	}
-	*stack = temp;
+	temp = *stack;
+	while (temp->next != NULL)
+		temp = temp->next;
+
+	temp->next = *stack;
+	temp->prev->next = NULL;
+	temp->prev = NULL;
+
+	(*stack)->prev = temp;
+	(*stack) = temp;
 }
