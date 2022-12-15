@@ -10,7 +10,7 @@
 void f_add(stack_t **stack, unsigned int line_number)
 {
 	stack_t *temp;
-	int sum = 0;
+	int sum;
 
 	if (!stack || !(*stack) || !(*stack)->next)
 	{
@@ -20,7 +20,7 @@ void f_add(stack_t **stack, unsigned int line_number)
 
 	temp = *stack;
 
-	sum = (*stack)->n + (*stack)->next->n;
+	sum = temp->n + temp->next->n;
 	temp->next->n = sum;
 	*stack = temp->next;
 	free(temp);
