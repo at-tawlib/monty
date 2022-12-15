@@ -12,6 +12,9 @@ void f_rotr(stack_t **stack, unsigned int line_number)
 	stack_t *temp, *node;
 	(void) line_number;
 
+	if (!stack || !(*stack) || !(*stack)->next)
+		return;
+
 	node = *stack;
 	while (node)
 	{
