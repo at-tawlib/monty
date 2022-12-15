@@ -46,5 +46,6 @@ void read_file(char *file, stack_t **stack);
 void parse_command(stack_t **stack, char *op, unsigned int line_num);
 void f_pint(stack_t **stack, unsigned int line_number);
 void f_pop(stack_t **stack, unsigned int line_number);
+void f_swap(stack_t **stack, unsigned int line_number);
 
 #endif
