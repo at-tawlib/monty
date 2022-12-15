@@ -23,6 +23,7 @@ void parse_command(stack_t **stack, char *op, unsigned int line_num)
 		{"div", f_div},
 		{"mul", f_mul},
 		{"mod", f_mod},
+		{"pchar", f_pchar},
 		{NULL, NULL}
 	};
 	for (i = 0; ops[i].opcode; i++)
